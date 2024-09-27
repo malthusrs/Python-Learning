@@ -6,8 +6,7 @@ print(msg_correto)
 #laço para validação do cpf
 while True:
     cpf = input('Digite seu CPF de acordo com o formato acima->  ')
-    cpf_t_1 = cpf.replace('.','')
-    cpf_t_2=cpf_t_1.replace('-','')
+    cpf_t_2=cpf.replace('-','').replace('.','')
     if cpf_t_2.isdigit()==False:
         print(msg_correto,'usando apenas números')
         continue
