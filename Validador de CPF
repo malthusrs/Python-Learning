@@ -1,0 +1,36 @@
+#rotina para validar um cpf
+#variaveis inciais
+msg_correto = 'Insira seu CPF no seguinte formato: XXX.XXX.XXX-XX'
+print('Rotina para validação de um CPF\t')
+print(msg_correto)
+#laço para validação do cpf
+while True:
+    cpf = input('Digite seu CPF de acordo com o formato acima->  ')
+    cpf_t_1 = cpf.replace('.','')
+    cpf_t_2=cpf_t_1.replace('-','')
+    if cpf_t_2.isdigit()==False:
+        print(msg_correto,'usando apenas números')
+        continue
+    if len(cpf)!= 14:
+        print(msg_correto)
+        continue
+    elif (cpf[3] and cpf[7] != '.' ) or  (cpf[-3]!='-'):
+        print(msg_correto)
+        continue
+    else:
+        print('Você digitou o CPF', cpf)
+        break
+# laço para retirar os pontos e traços e transformar os valores em iNT
+print(cpf_t_2)
+sum=0
+cont=10
+#print(cpf_t_2[:-3])
+for i in cpf_t_2[:-2]:
+        sum += int(i)* cont
+        cont-=1
+
+resto = (sum*10)%11
+condicao = resto if resto <=9 else 0
+#print(condicao)
+validador = 'Esse CPF é válido' if str(condicao) == cpf[-2] else ' Esse CPF é Inválido'
+print (validador)
