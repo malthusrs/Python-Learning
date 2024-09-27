@@ -1,0 +1,35 @@
+#gerador de cpfs
+import random
+import sys
+
+#gerando nove digitos aleatoriamente
+novedigitos=''
+dezdigitos=''
+for i in range(9):
+    novedigitos += str(random.randint(0,9))
+
+#calculo primeiro digito
+sum=0
+cont=10
+for n in novedigitos:
+    sum+= int(n) * cont
+    cont-=1
+
+teste= (sum*10)%11
+digito1= teste if teste<=9 else 0
+dezdigitos= novedigitos+str(digito1)
+#print(dezdigitos)
+
+# gerando segundo digito
+sum_2=0
+cont_2=11
+for j in dezdigitos[:]:
+    sum_2+= int(j)*cont_2
+    cont_2-=1
+
+teste_2=(sum_2*10)%11
+digito2 = teste_2 if teste_2<=9 else 0
+cpf_final= dezdigitos+str(digito2)
+final = '{}.{}.{}-{}'.format(cpf_final[:3],cpf_final[3:6],cpf_final[6:9], cpf_final[9:])
+print(final)
+sys.exit()
