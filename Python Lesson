@@ -1,5 +1,5 @@
 #exibe a lista de numeros primos em um intervalo
-ponto_final = int(input('INsira o numero final do intervalo  -> '))
+ponto_final = int(input('Insira o numero final do intervalo  -> '))
 cont =1
 lista=[]
 while cont<=ponto_final:
@@ -12,4 +12,4 @@ while cont<=ponto_final:
 
     cont+=1
 
-print('Os números primo
+print('Os números primos entre 1 e',ponto_final,'são:',lista)
