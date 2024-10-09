@@ -20,3 +20,4 @@ def gerador_welcome(n,m):
 gerador_de_lihas(9,27,'normal')
 gerador_welcome(9,27)
 gerador_de_lihas(9,27,'reverso')
+
