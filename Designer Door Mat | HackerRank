@@ -1,0 +1,22 @@
+def gerador_de_lihas(n,m,k):
+    espacador_triplo = '.|.'
+    espacador_simples = '-'
+    # espacador simples + triplo = len(m)
+    if k == 'normal':
+        for linhas in range(1, n, 2):
+            ntracos = int((m - 3 * linhas) / 2)
+            print(ntracos * espacador_simples, espacador_triplo * linhas, ntracos * espacador_simples)
+    elif k=='reverso':
+        for linhas in range(n,0,-2):
+           # print(linhas)
+            ntracos = int((m - 3 * linhas) / 2)
+            print(ntracos * espacador_simples, espacador_triplo * linhas, ntracos * espacador_simples)
+
+def gerador_welcome(n,m):
+     espacador_simples = '-'
+     tracos = int((m-7)/2)
+     print(tracos*espacador_simples,'WELCOME',tracos*espacador_simples)
+
+gerador_de_lihas(9,27,'normal')
+gerador_welcome(9,27)
+gerador_de_lihas(9,27,'reverso')
